@@ -70,21 +70,25 @@
     max-width: 100%;
   }
 
-  /* removed old horizontal scroller styles (skills use grid now) */
-
-    /* small runtime CSS for reveal animation (avoids @apply warnings) */
-    .reveal { opacity: 0; transition: all 0.7s ease-out; }
-    .reveal.active { opacity: 1; transform: none; }
-
-    .reveal {
+  .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
+
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Tambah variasi delay biar smooth */
+.reveal:nth-child(odd) {
+  transition-delay: 0.1s;
+}
+.reveal:nth-child(even) {
+  transition-delay: 0.2s;
+}
+
 
 
     </style>
@@ -216,113 +220,96 @@
   </div>
 </section>
 
-<!-- 🌟 Skills Section -->
+<!-- 🌟 Skills Section (Optimized) -->
 <section id="skills" class="py-20 md:py-28 bg-gradient-to-br from-gradient-start/10 to-gradient-end/10">
-  <di class="max-w-7xl mx-auto px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2
       class="text-4xl font-extrabold text-center bg-gradient-to-r from-gradient-start to-gradient-end bg-clip-text text-transparent mb-20 tracking-wide">
       My Skills
     </h2>
 
-    <div class="grid md:grid-cols-2 gap-14">
+    <div class="grid md:grid-cols-2 gap-12">
       
       <!-- 💻 Hard Skills -->
-      <div class="reveal bg-white/70 backdrop-blur-md border border-border-color rounded-2xl shadow-lg p-10 hover:shadow-2xl transition-all duration-500">
-        <div class="flex items-center gap-3 mb-6">
-          <div class="w-10 h-10 rounded-full bg-gradient-to-r from-gradient-start to-gradient-end flex items-center justify-center text-white text-lg font-bold">
-            💻
-          </div>
+      <div class="reveal will-change-transform bg-white/70 backdrop-blur-md border border-border-color rounded-2xl shadow-lg p-8 sm:p-10 hover:shadow-2xl transition-all duration-500">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-r from-gradient-start to-gradient-end flex items-center justify-center text-white text-lg font-bold">💻</div>
           <h3 class="text-2xl font-bold text-text-primary">Hard Skills</h3>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          <div class="p-4 bg-white rounded-xl border border-border-color hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="bg-bg-card border border-border-color rounded-xl p-5 text-center hover:shadow-md transform hover:-translate-y-1 transition-transform duration-300">
             <h4 class="font-semibold text-text-primary">HTML</h4>
             <p class="text-sm text-text-secondary mt-1">Mampu membuat struktur dasar halaman web dengan rapi.</p>
           </div>
-
-          <div class="p-4 bg-white rounded-xl border border-border-color hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+          <div class="bg-bg-card border border-border-color rounded-xl p-5 text-center hover:shadow-md transform hover:-translate-y-1 transition-transform duration-300">
             <h4 class="font-semibold text-text-primary">CSS</h4>
             <p class="text-sm text-text-secondary mt-1">Mendesain tampilan web agar terlihat menarik dan responsif.</p>
           </div>
-
-          <div class="p-4 bg-white rounded-xl border border-border-color hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+          <div class="bg-bg-card border border-border-color rounded-xl p-5 text-center hover:shadow-md transform hover:-translate-y-1 transition-transform duration-300">
             <h4 class="font-semibold text-text-primary">Tailwind CSS</h4>
-            <p class="text-sm text-text-secondary mt-1">Masih tahap dasar – memahami konsep utility class.</p>
+            <p class="text-sm text-text-secondary mt-1">Menguasai dasar utility class untuk desain modern.</p>
           </div>
-
-          <div class="p-4 bg-white rounded-xl border border-border-color hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+          <div class="bg-bg-card border border-border-color rounded-xl p-5 text-center hover:shadow-md transform hover:-translate-y-1 transition-transform duration-300">
             <h4 class="font-semibold text-text-primary">JavaScript</h4>
-            <p class="text-sm text-text-secondary mt-1">Dasar interaktivitas & logika pemrograman.</p>
+            <p class="text-sm text-text-secondary mt-1">Dasar logika interaktif & manipulasi DOM.</p>
           </div>
-
-          <div class="p-4 bg-white rounded-xl border border-border-color hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+          <div class="bg-bg-card border border-border-color rounded-xl p-5 text-center hover:shadow-md transform hover:-translate-y-1 transition-transform duration-300">
             <h4 class="font-semibold text-text-primary">PHP & MySQL</h4>
-            <p class="text-sm text-text-secondary mt-1">Membuat aplikasi sederhana dengan database menggunakan XAMPP.</p>
+            <p class="text-sm text-text-secondary mt-1">Membuat aplikasi CRUD sederhana menggunakan XAMPP.</p>
           </div>
-
-          <div class="p-4 bg-white rounded-xl border border-border-color hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+          <div class="bg-bg-card border border-border-color rounded-xl p-5 text-center hover:shadow-md transform hover:-translate-y-1 transition-transform duration-300">
             <h4 class="font-semibold text-text-primary">Python</h4>
-            <p class="text-sm text-text-secondary mt-1">Dasar – pernah membuat program input data seperti nama siswa.</p>
+            <p class="text-sm text-text-secondary mt-1">Menulis program sederhana seperti input data siswa.</p>
           </div>
-
-          <div class="p-4 bg-white rounded-xl border border-border-color hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+          <div class="bg-bg-card border border-border-color rounded-xl p-5 text-center hover:shadow-md transform hover:-translate-y-1 transition-transform duration-300">
             <h4 class="font-semibold text-text-primary">Java</h4>
-            <p class="text-sm text-text-secondary mt-1">Pernah membuat aplikasi GUI sederhana seperti kalkulator.</p>
+            <p class="text-sm text-text-secondary mt-1">Membuat GUI kalkulator menggunakan Java Swing.</p>
           </div>
-
-          <div class="p-4 bg-white rounded-xl border border-border-color hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+          <div class="bg-bg-card border border-border-color rounded-xl p-5 text-center hover:shadow-md transform hover:-translate-y-1 transition-transform duration-300">
             <h4 class="font-semibold text-text-primary">XAMPP</h4>
-            <p class="text-sm text-text-secondary mt-1">Menggunakan XAMPP untuk menjalankan dan menguji proyek PHP.</p>
+            <p class="text-sm text-text-secondary mt-1">Server lokal untuk menguji proyek PHP & database.</p>
           </div>
         </div>
       </div>
 
       <!-- 🤝 Soft Skills -->
-      <div class="reveal bg-white/70 backdrop-blur-md border border-border-color rounded-2xl shadow-lg p-10 hover:shadow-2xl transition-all duration-500">
-        <div class="flex items-center gap-3 mb-6">
-          <div class="w-10 h-10 rounded-full bg-gradient-to-r from-gradient-start to-gradient-end flex items-center justify-center text-white text-lg font-bold">
-            🤝
-          </div>
+      <div class="reveal will-change-transform bg-white/70 backdrop-blur-md border border-border-color rounded-2xl shadow-lg p-8 sm:p-10 hover:shadow-2xl transition-all duration-500">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-r from-gradient-start to-gradient-end flex items-center justify-center text-white text-lg font-bold">🤝</div>
           <h3 class="text-2xl font-bold text-text-primary">Soft Skills</h3>
         </div>
 
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-5 px-10 pb-10">
-  <div class="p-4 bg-white rounded-xl border border-border-color hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-    <h4 class="font-semibold text-text-primary">Tanggung Jawab</h4>
-    <p class="text-sm text-text-secondary mt-1">Selalu berusaha menyelesaikan tugas tepat waktu dan sesuai arahan pembimbing.</p>
-  </div>
-
-  <div class="p-4 bg-white rounded-xl border border-border-color hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-    <h4 class="font-semibold text-text-primary">Mau Belajar Hal Baru</h4>
-    <p class="text-sm text-text-secondary mt-1">Aktif mencari dan mencoba teknologi atau framework baru.</p>
-  </div>
-
-  <div class="p-4 bg-white rounded-xl border border-border-color hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-    <h4 class="font-semibold text-text-primary">Teliti</h4>
-    <p class="text-sm text-text-secondary mt-1">Memperhatikan detail kode agar hasilnya bersih dan bebas error.</p>
-  </div>
-
-  <div class="p-4 bg-white rounded-xl border border-border-color hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-    <h4 class="font-semibold text-text-primary">Kerja Sama Tim</h4>
-    <p class="text-sm text-text-secondary mt-1">Terbiasa berkolaborasi dalam proyek kelompok dan membagi tugas secara adil.</p>
-  </div>
-
-  <div class="p-4 bg-white rounded-xl border border-border-color hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-    <h4 class="font-semibold text-text-primary">Komunikatif</h4>
-    <p class="text-sm text-text-secondary mt-1">Mampu menyampaikan ide dan mendengarkan pendapat rekan tim dengan baik.</p>
-  </div>
-
-  <div class="p-4 bg-white rounded-xl border border-border-color hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-    <h4 class="font-semibold text-text-primary">Disiplin & Konsisten</h4>
-    <p class="text-sm text-text-secondary mt-1">Menjaga kebiasaan belajar dan tetap fokus meski dalam tekanan waktu.</p>
-  </div>
-  </div>
-  </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="bg-bg-card border border-border-color rounded-xl p-5 text-center hover:shadow-md transform hover:-translate-y-1 transition-transform duration-300">
+            <h4 class="font-semibold text-text-primary">Tanggung Jawab</h4>
+            <p class="text-sm text-text-secondary mt-1">Selalu menyelesaikan tugas tepat waktu sesuai arahan pembimbing.</p>
+          </div>
+          <div class="bg-bg-card border border-border-color rounded-xl p-5 text-center hover:shadow-md transform hover:-translate-y-1 transition-transform duration-300">
+            <h4 class="font-semibold text-text-primary">Mau Belajar Hal Baru</h4>
+            <p class="text-sm text-text-secondary mt-1">Aktif mencoba framework dan bahasa pemrograman baru.</p>
+          </div>
+          <div class="bg-bg-card border border-border-color rounded-xl p-5 text-center hover:shadow-md transform hover:-translate-y-1 transition-transform duration-300">
+            <h4 class="font-semibold text-text-primary">Teliti</h4>
+            <p class="text-sm text-text-secondary mt-1">Memastikan setiap kode berjalan dengan rapi tanpa error.</p>
+          </div>
+          <div class="bg-bg-card border border-border-color rounded-xl p-5 text-center hover:shadow-md transform hover:-translate-y-1 transition-transform duration-300">
+            <h4 class="font-semibold text-text-primary">Kerja Sama Tim</h4>
+            <p class="text-sm text-text-secondary mt-1">Terbiasa berkolaborasi dalam proyek kelompok.</p>
+          </div>
+          <div class="bg-bg-card border border-border-color rounded-xl p-5 text-center hover:shadow-md transform hover:-translate-y-1 transition-transform duration-300">
+            <h4 class="font-semibold text-text-primary">Komunikatif</h4>
+            <p class="text-sm text-text-secondary mt-1">Menyampaikan ide & mendengarkan pendapat tim dengan baik.</p>
+          </div>
+          <div class="bg-bg-card border border-border-color rounded-xl p-5 text-center hover:shadow-md transform hover:-translate-y-1 transition-transform duration-300">
+            <h4 class="font-semibold text-text-primary">Disiplin & Konsisten</h4>
+            <p class="text-sm text-text-secondary mt-1">Menjaga rutinitas belajar dan fokus hingga target tercapai.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
-
-
 
     <!-- Portfolio Section -->
 <section id="portfolio" class="py-16 md:py-24 bg-gradient-to-br from-gradient-start/5 to-gradient-end/5">
